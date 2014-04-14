@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AppMovilOrder</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_login_">Login_Activity</string>
+    <string name="title_descripcion">Logo de la Empresa</string>
+    <string name="title_contrasena">Contraseña</string>
+    <string name="title_guardar_id">Login</string>
+    <string name="title_activity_menu_">Menu_Activity</string>
+    <string name="title_activity_gestionar__cliente_">Gestionar_Cliente_Activity</string>
+
+</resources>
