@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="color_celeste_claro">#008AA0</color>
+    <color name="color_lila">#5535AF</color>
+    <color name="color_celeste_claro_azul">#2878EC</color>
+    <color name="color_azul_oscuro">#001940</color>
+    <color name="color_azul">#003C99</color>
+    <color name="color_verde_lechuga">#008E00</color>
+    <color name="color_naranja">#DB552D</color>
+    <color name="color_rojo_claro">#AF193F</color>
+    <color name="color_rojo_fuccia">#A200A9</color>
+    <color name="color_amarillo">#FFD700</color>
+    <color name="negro">#000000</color>
+    <color name="colorhint">#DDDDDD</color>
+
+</resources>

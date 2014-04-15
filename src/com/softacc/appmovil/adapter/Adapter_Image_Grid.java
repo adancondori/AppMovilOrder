@@ -1,6 +1,6 @@
 package com.softacc.appmovil.adapter;
 
-
+import com.vista.zoonv1.Menu_Activity;
 import com.vista.zoonv1.R;
 
 import android.content.Context;
@@ -47,29 +47,31 @@ public class Adapter_Image_Grid extends BaseAdapter {
 
 			String mobile = mobileValues[position];
 
-			if (mobile.equals("Cliente")) {
-				gridView.setBackgroundColor(Color.rgb(0, 191, 255));
+			if (mobile.equals(Menu_Activity.Texto_cliente)) {
+				gridView.setBackgroundResource(R.color.color_celeste_claro);
 				imageView.setImageResource(R.drawable.cliente);
-			} else if (mobile.equals("Toma Pedido")) {
-				gridView.setBackgroundColor(Color.rgb(255, 215, 0));
-				imageView.setImageResource(R.drawable.tomapedido);
-			} else if (mobile.equals("Actualizar")) {
-				gridView.setBackgroundColor(Color.rgb(250, 140, 0));
+			} else if (mobile.equals(Menu_Activity.Texto_Toma_Pedido)) {
+				gridView.setBackgroundResource(R.color.color_verde_lechuga);
+				imageView.setImageResource(R.drawable.bolsapedido);
+			} else if (mobile.equals(Menu_Activity.Texto_Galeria)) {
+				gridView.setBackgroundResource(R.color.color_naranja);
 				imageView.setImageResource(R.drawable.actualizar);
-			} else if (mobile.equals("Mapa")) {
-				gridView.setBackgroundColor(Color.rgb(50, 205, 50));
+			} else if (mobile.equals(Menu_Activity.Texto_Historial)) {
+				gridView.setBackgroundResource(R.color.color_amarillo);
 				imageView.setImageResource(R.drawable.map);
-			} else if (mobile.equals("Compra")) {
-				gridView.setBackgroundColor(Color.rgb(170, 0, 255));
+			} else if (mobile.equals(Menu_Activity.Texto_Mapa_Tiendas)) {
+				gridView.setBackgroundResource(R.color.color_lila);
 				imageView.setImageResource(R.drawable.carrito);
-			} else if (mobile.equals("GoogleCloud")) {
-				gridView.setBackgroundColor(Color.rgb(216, 0, 115));
+			} else if (mobile.equals(Menu_Activity.Texto_Ofertas)) {
+				gridView.setBackgroundResource(R.color.color_rojo_claro);
 				imageView.setImageResource(R.drawable.ic_launcher);
+			} else if (mobile.equals(Menu_Activity.Texto_Sincronizar_Envio)) {
+				gridView.setBackgroundResource(R.color.color_azul);
+				imageView.setImageResource(R.drawable.detalle);
 			} else {
-				gridView.setBackgroundColor(Color.rgb(40, 0, 115));
+				gridView.setBackgroundResource(R.color.color_rojo_fuccia);
 				imageView.setImageResource(R.drawable.detalle);
 			}
-
 		} else {
 			gridView = (View) convertView;
 		}

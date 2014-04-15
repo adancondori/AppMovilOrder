@@ -10,5 +10,9 @@
     <string name="title_guardar_id">Login</string>
     <string name="title_activity_menu_">Menu_Activity</string>
     <string name="title_activity_gestionar__cliente_">Gestionar_Cliente_Activity</string>
+    <string name="title_activity_camara_">Camara_Activity</string>
+    <string name="title_activity_galeria_">Galeria_Activity</string>
+    <string name="title_activity_mapa__lista__tienda_">Mapa_Lista_Tienda_Activity</string>
+    <string name="title_activity_toma__pedido_">Toma_Pedido_Activity</string>
 
 </resources>

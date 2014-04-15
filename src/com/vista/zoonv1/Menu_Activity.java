@@ -20,19 +20,27 @@ import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.widget.*;
+import android.widget.AdapterView.OnItemClickListener;
 
-public class Menu_Activity extends Activity {
+public class Menu_Activity extends Activity implements OnItemClickListener {
 
 	GridView gridView;
-	public Intent i;
 	public TextView nick;
-	// public NCliente cliente;
-	// NUsuario usuario;
-	//prueba
+	// *---VARIABLES DEL SISTEMA
 
-	static final String[] List = new String[] { "Cliente", "Toma Pedido",
-			"Sincronizar Envio", "Mapa", "Compra", "GoogleCloud",
-			"Historial de Pedidos" };
+	public static String Texto_cliente = "Cliente";
+	public static String Texto_Toma_Pedido = "Toma Pedido";
+	public static String Texto_Galeria = "Galeria Producto";
+	public static String Texto_Historial = "Historial Pedido";
+	public static String Texto_Mapa_Tiendas = "Mapa Tiendas";
+	public static String Texto_Ofertas = "Ofertas Diplast";
+	public static String Texto_Sincronizar_Envio = "Sincronizar Enviar Pedido";
+	public static String Texto_Sincronizar_Recibir = "Sincronizar Recibir Datos";
+
+	static final String[] List = new String[] { Texto_cliente,
+			Texto_Toma_Pedido, Texto_Galeria, Texto_Historial,
+			Texto_Mapa_Tiendas, Texto_Ofertas, Texto_Sincronizar_Envio,
+			Texto_Sincronizar_Recibir };
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -51,80 +59,12 @@ public class Menu_Activity extends Activity {
 
 		gridView.setAdapter(new Adapter_Image_Grid(this, List));
 
-		gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			public void onItemClick(AdapterView<?> parent, View v,
-					int position, long id) {
+		gridView.setOnItemClickListener(this);
 
-				// Toast.makeText(getApplicationContext(),((TextView)
-				// v.findViewById(R.id.grid_item_label)).getText(),
-				// Toast.LENGTH_SHORT).show();
-				// Intent i;
-
-				if ((((TextView) v.findViewById(R.id.grid_item_label))
-						.getText()).equals("Cliente")) {
-
-					// i = new Intent(getApplicationContext(),
-					// GestionarClienteActivity.class);
-				} else {
-					if ((((TextView) v.findViewById(R.id.grid_item_label))
-							.getText()).equals("Toma Pedido")) {
-						// i = new Intent(getApplicationContext(),
-						// ListaGrupo.class);
-					} else {
-						if ((((TextView) v.findViewById(R.id.grid_item_label))
-								.getText()).equals("Actualizar")) {
-							// i = new Intent(getApplicationContext(),
-							// UpdateActivity.class);
-							Toast.makeText(
-									getApplicationContext(),
-									"Espere mientras se Acutaliza.  id " + id
-											+ "  " + position,
-									Toast.LENGTH_SHORT).show();
-						} else {
-							if ((((TextView) v
-									.findViewById(R.id.grid_item_label))
-									.getText()).equals("Mapa")) {
-								// i = new Intent(getApplicationContext(),
-								// GoogleMapsActivity.class);
-							} else {
-								if ((((TextView) v
-										.findViewById(R.id.grid_item_label))
-										.getText()).equals("Compra")) {
-									// i = new Intent(getApplicationContext(),
-									// CompraUser_Activity.class);
-								} else {
-									// i = new Intent(getApplicationContext(),
-									// RegisterActivity.class);
-									if ((((TextView) v
-											.findViewById(R.id.grid_item_label))
-											.getText()).equals("GoogleCloud")) {
-										// i = new
-										// Intent(getApplicationContext(),
-										// RegisterActivity.class);
-									} else {
-										// i = new
-										// Intent(getApplicationContext(),
-										// HistorialActivity.class);
-									}
-								}
-							}
-						}
-					}
-				}
-				startActivity(i);
-			}
-		});
-		// texview
 		nick = (TextView) findViewById(R.id.tvdetalle);
-		// String nombre = Pedido_Singleton.getInstance().getNombrepromotor();
-		nick.setText("hola");
+		nick.setText("Admin");
 
 	}
-
-	// private ArrayList<Cliente> GetSearchResults() {
-	// cliente = new NCliente();
-	// return cliente.getTodo(getApplicationContext());
-	// }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -175,6 +115,51 @@ public class Menu_Activity extends Activity {
 			alertDialog.show();
 		}
 		return super.onKeyDown(keyCode, event);
+	}
+
+	// *---EVENTOS DEL SISTEMA
+	@Override
+	public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+		// TODO Auto-generated method stub
+		Intent i = null;
+		if ((((TextView) v.findViewById(R.id.grid_item_label)).getText())
+				.equals(Texto_cliente)) {
+
+			i = new Intent(getApplicationContext(),
+					Gestionar_Cliente_Activity.class);
+		} else if ((((TextView) v.findViewById(R.id.grid_item_label)).getText())
+				.equals(Texto_Toma_Pedido)) {
+			i = new Intent(getApplicationContext(), Toma_Pedido_Activity.class);
+		} else if ((((TextView) v.findViewById(R.id.grid_item_label)).getText())
+				.equals(Texto_Galeria)) {
+			i = new Intent(getApplicationContext(), Galeria_Activity.class);
+			Toast.makeText(
+					getApplicationContext(),
+					"Espere mientras se Acutaliza.  id " + id + "  " + position,
+					Toast.LENGTH_SHORT).show();
+		} else if ((((TextView) v.findViewById(R.id.grid_item_label)).getText())
+				.equals(Texto_Historial)) {
+			// i = new Intent(getApplicationContext(),
+			// GoogleMapsActivity.class);
+		} else if ((((TextView) v.findViewById(R.id.grid_item_label)).getText())
+				.equals(Texto_Mapa_Tiendas)) {
+			i = new Intent(getApplicationContext(),
+					Mapa_Lista_Tienda_Activity.class);
+		} else if ((((TextView) v.findViewById(R.id.grid_item_label)).getText())
+				.equals(Texto_Ofertas)) {
+			// i = new
+			// Intent(getApplicationContext(),
+			// RegisterActivity.class);
+		} else if ((((TextView) v.findViewById(R.id.grid_item_label)).getText())
+				.equals(Texto_Sincronizar_Envio)) {
+
+		} else {
+
+		}
+		if (i != null) {
+			startActivity(i);
+		}
+
 	}
 
 }
