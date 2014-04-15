@@ -28,6 +28,7 @@ public class Menu_Activity extends Activity {
 	public TextView nick;
 	// public NCliente cliente;
 	// NUsuario usuario;
+	//prueba
 
 	static final String[] List = new String[] { "Cliente", "Toma Pedido",
 			"Sincronizar Envio", "Mapa", "Compra", "GoogleCloud",
